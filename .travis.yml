@@ -1,0 +1,22 @@
+#dist:     trusty    используем Ubuntu 14.04 Trusty Tahr (а не 12.02 Precise Pangolin)
+#sudo:     required  используем Virtual Machine (а не Docker container)
+
+language: cpp       # на практике разницы между специфичным для C++ окружением
+                    # и, скажем, python -- никакой. Но пусть будет cpp.
+
+os:
+    - linux
+
+compiler:
+
+    - gcc
+    - clang
+
+
+script:
+    # скрипт сборки и тестирования проекта:
+    - mkdir build
+    - cd build
+    - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
+    - cmake --build .
+    - ctest --output-on-failure
