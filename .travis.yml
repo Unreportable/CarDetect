@@ -12,7 +12,6 @@ compiler:
     - gcc
     - clang
 
-
 script:
     # скрипт сборки и тестирования проекта:
     - mkdir build
