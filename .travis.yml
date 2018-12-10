@@ -10,7 +10,6 @@ os:
 compiler:
 
     - gcc
-    - clang
     
 install:
 # OpenCV v3.0.0 (beta) install code (modified from orignal source: https://github.com/jayrambhia/Install-OpenCV)
@@ -52,4 +51,3 @@ script:
     - cd build
     - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
     - cmake --build .
-    - ctest --output-on-failure
